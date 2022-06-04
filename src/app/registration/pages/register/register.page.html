@@ -45,7 +45,7 @@
   <mat-step>
     <ng-template matStepLabel>Summary</ng-template>
     <div class="step-content-wrapper">
-      <app-summary></app-summary>
+      <app-summary [registration]="registrationDetail$ | async"></app-summary>
       <div class="step-action">
         <button mat-flat-button color="accent" matStepperPrevious>Back</button>
       </div>
