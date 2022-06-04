@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
-import {RoutedComponents, WizardRoutingModule} from './wizard-routing.module';
+import {RoutedComponents, RegistrationRoutingModule} from './registration-routing.module';
 import {DetailFormComponent, SelectTableComponent, SummaryComponent, UploadImageComponent} from './components';
-import {AngularMaterialWizardModule} from './angular-material-wizard.module';
+import {AngularMaterialRegistrationModule} from './angular-material-registration.module';
 import {StoreModule} from '@ngrx/store';
 import {registerReducer} from './store/register.reducer';
 import {CommonModule} from '@angular/common';
@@ -16,8 +16,8 @@ const Components = [
 @NgModule({
   imports: [
     CommonModule,
-    WizardRoutingModule,
-    AngularMaterialWizardModule,
+    RegistrationRoutingModule,
+    AngularMaterialRegistrationModule,
     StoreModule.forRoot({ register: registerReducer })
   ],
   declarations: [
@@ -25,4 +25,4 @@ const Components = [
     ...RoutedComponents
   ]
 })
-export class WizardModule {}
+export class RegistrationModule {}

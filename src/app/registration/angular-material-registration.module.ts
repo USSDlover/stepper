@@ -14,4 +14,4 @@ const AngularMaterials = [
 ];
 
 @NgModule({ exports: [...AngularMaterials] })
-export class AngularMaterialWizardModule {}
+export class AngularMaterialRegistrationModule {}

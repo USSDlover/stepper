@@ -8,7 +8,7 @@ const routes: Routes = [{path: '', component: RegisterPage}];
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class WizardRoutingModule {}
+export class RegistrationRoutingModule {}
 
 export const RoutedComponents = [
   RegisterPage
