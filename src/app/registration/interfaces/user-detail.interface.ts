@@ -4,5 +4,5 @@ export interface IUserDetail {
   amount: number;
   date: Date;
   status: IStatus;
-  sourceOfFound: string;
+  sourceOfFund: string;
 }

@@ -4,7 +4,7 @@ export class UserDetail implements Partial<IUserDetail> {
   amount: number | undefined;
   date: Date | undefined;
   status: IStatus | undefined;
-  sourceOfFound: string | undefined;
+  sourceOfFund: string | undefined;
 
   constructor() {}
 

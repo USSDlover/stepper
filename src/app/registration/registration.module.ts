@@ -5,6 +5,7 @@ import {AngularMaterialRegistrationModule} from './angular-material-registration
 import {StoreModule} from '@ngrx/store';
 import {registerReducer} from './store/register.reducer';
 import {CommonModule} from '@angular/common';
+import {ReactiveFormsModule} from '@angular/forms';
 
 const Components = [
   UploadImageComponent,
@@ -16,6 +17,7 @@ const Components = [
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RegistrationRoutingModule,
     AngularMaterialRegistrationModule,
     StoreModule.forRoot({ register: registerReducer })

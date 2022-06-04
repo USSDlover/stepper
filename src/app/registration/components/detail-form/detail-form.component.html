@@ -1,1 +1,36 @@
-<p>detail-form works!</p>
+<ng-container *ngIf="detailForm">
+  <form (ngSubmit)="onSubmit()" [formGroup]="detailForm">
+    <mat-form-field>
+      <mat-label>Amount</mat-label>
+      <input matInput formControlName="amount" type="number">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Choose Date</mat-label>
+      <input [min]="minDate" [max]="maxDate"
+             matInput formControlName="date" [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option [value]="'available'">Available</mat-option>
+        <mat-option [value]="'working'">Workings</mat-option>
+        <mat-option [value]="'standby'">Standby</mat-option>
+        <mat-option [value]="'disabled'">Disabled</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Source of Fund</mat-label>
+      <input matInput formControlName="sourceOfFund" type="text">
+    </mat-form-field>
+    <button
+      [disabled]="detailForm.invalid"
+      type="submit"
+      mat-flat-button
+      color="primary">
+      Submit
+    </button>
+  </form>
+</ng-container>
