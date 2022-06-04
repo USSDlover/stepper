@@ -1,17 +1,18 @@
 import {createReducer, on} from '@ngrx/store';
-import {addDetail, addImage, selectPerson} from './register.actions';
+import {addDetail, addImage, selectAgent} from './register.actions';
+import {Registration} from '../models';
 
-export const initialState = {};
+export const initialState = new Registration();
 
 export const registerReducer = createReducer(
   initialState,
-  on(addImage, (state) => {
-    return state;
+  on(addImage, (state, uploadedImage) => {
+    return {...state, uploadedImage};
   }),
-  on(addDetail, (state) => {
-    return state;
+  on(addDetail, (state, userDetail) => {
+    return {...state, userDetail};
   }),
-  on(selectPerson, (state) => {
-    return state;
+  on(selectAgent, (state, agent) => {
+    return {...state, agent};
   })
 );

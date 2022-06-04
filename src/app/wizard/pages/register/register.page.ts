@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
-import {addDetail, addImage, selectPerson} from '../../store/register.actions';
+import {addDetail, addImage, selectAgent} from '../../store/register.actions';
 import {Observable} from 'rxjs';
+import {IAgent, IUserDetail} from '../../interfaces';
 
 @Component({
   selector: 'app-register',
@@ -19,15 +20,15 @@ export class RegisterPage implements OnInit {
   }
 
   onUploadImage(uploadedImage: string): void {
-    this.store.dispatch(addImage());
+    this.store.dispatch(addImage({uploadedImage}));
   }
 
-  onSubmitDetailForm(submittedForm: any): void {
-    this.store.dispatch(addDetail());
+  onSubmitDetailForm(submittedForm: IUserDetail): void {
+    this.store.dispatch(addDetail(submittedForm));
   }
 
-  onSelectPerson(selectedPerson: any): void {
-    this.store.dispatch(selectPerson());
+  onSelectAgent(selectedAgent: IAgent): void {
+    this.store.dispatch(selectAgent(selectedAgent));
   }
 
 }

@@ -1,7 +1,17 @@
-import {createAction} from '@ngrx/store';
+import {createAction, props} from '@ngrx/store';
+import {IAgent, IUserDetail} from '../interfaces';
 
-export const addImage = createAction('[Register Page] Add Image');
+export const addImage = createAction(
+  '[Register Page] Add Image',
+  props<{ uploadedImage: string }>()
+);
 
-export const addDetail = createAction('[Register Page] Add Detail');
+export const addDetail = createAction(
+  '[Register Page] Add Detail',
+  props<IUserDetail>()
+);
 
-export const selectPerson = createAction('[Register Page] Select Person');
+export const selectAgent = createAction(
+  '[Register Page] Select Agent',
+  props<IAgent>()
+);
