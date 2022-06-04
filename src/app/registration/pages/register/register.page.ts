@@ -19,7 +19,7 @@ export class RegisterPage implements OnInit {
   ngOnInit(): void {
   }
 
-  onUploadImage(uploadedImage: string): void {
+  onUploadImage(uploadedImage: File): void {
     this.store.dispatch(addImage({uploadedImage}));
   }
 

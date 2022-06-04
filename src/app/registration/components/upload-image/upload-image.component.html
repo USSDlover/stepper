@@ -1,1 +1,4 @@
-<p>upload-image works!</p>
+<div class="upload-image">
+  <mat-label>Please select the image</mat-label>
+  <input (change)="onImageSelected($event)" type="file" name="image" accept="image/jpeg, image/png">
+</div>

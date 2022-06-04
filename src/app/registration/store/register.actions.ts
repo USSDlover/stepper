@@ -3,7 +3,7 @@ import {IAgent, IUserDetail} from '../interfaces';
 
 export const addImage = createAction(
   '[Register Page] Add Image',
-  props<{ uploadedImage: string }>()
+  props<{ uploadedImage: File }>()
 );
 
 export const addDetail = createAction(
