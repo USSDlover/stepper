@@ -1,0 +1,11 @@
+.upload-image {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+
+  input {
+    border: 0.12rem solid purple;
+    border-radius: 0.5rem;
+    padding: .5rem;
+  }
+}

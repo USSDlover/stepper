@@ -1,0 +1,11 @@
+tr.mat-row {
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0,0,0,0.1);
+  }
+
+  td.mat-cell {
+    text-align: center;
+  }
+}

@@ -1,0 +1,11 @@
+.step-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  max-width: 30rem;
+}
+
+.step-action {
+  display: flex;
+  gap: 1.25rem;
+}

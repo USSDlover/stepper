@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 30rem;
+  max-height: 30rem;
+  object-fit: contain;
+}

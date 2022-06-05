@@ -1,0 +1,56 @@
+<mat-stepper orientation="vertical">
+  <mat-step>
+    <ng-template matStepLabel>Upload Image</ng-template>
+    <div class="step-content-wrapper">
+      <app-upload-image
+        (imageUploaded)="onUploadImage($event); moveToSecondStep.click()"
+      ></app-upload-image>
+      <div>
+        <button
+          mat-flat-button
+          matStepperNext
+          color="primary"
+        >
+          <!-- Span has been used so it can be clickable.
+           As the button has converted to MatButton it does not contains `click` method -->
+          <span #moveToSecondStep>Next</span>
+        </button>
+      </div>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Enter Detail</ng-template>
+    <div class="step-content-wrapper">
+      <app-detail-form
+        (formSubmitted)="onSubmitDetailForm($event); moveToThirdStep.click()"
+      ></app-detail-form>
+      <div class="step-action">
+        <button mat-flat-button color="accent" matStepperPrevious>Back</button>
+        <button mat-flat-button color="primary" matStepperNext>
+          <span #moveToThirdStep>Next</span>
+        </button>
+      </div>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Select Agent</ng-template>
+    <div class="step-content-wrapper">
+      <app-select-table (agentSelected)="onSelectAgent($event); moveToSummary.click()"></app-select-table>
+      <div class="step-action">
+        <button mat-flat-button color="accent" matStepperPrevious>Back</button>
+        <button mat-flat-button color="primary" matStepperNext>
+          <span #moveToSummary>Next</span>
+        </button>
+      </div>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Summary</ng-template>
+    <div class="step-content-wrapper">
+      <app-summary [registration]="registrationDetail$ | async"></app-summary>
+      <div class="step-action">
+        <button mat-flat-button color="accent" matStepperPrevious>Back</button>
+      </div>
+    </div>
+  </mat-step>
+</mat-stepper>
