@@ -1,6 +1,13 @@
 import {NgModule} from '@angular/core';
 import {RoutedComponents, RegistrationRoutingModule} from './registration-routing.module';
-import {DetailFormComponent, SelectTableComponent, SummaryComponent, UploadImageComponent} from './components';
+import {
+  CardComponent,
+  DetailComponent,
+  DetailFormComponent,
+  SelectTableComponent,
+  SummaryComponent,
+  UploadImageComponent
+} from './components';
 import {AngularMaterialRegistrationModule} from './angular-material-registration.module';
 import {StoreModule} from '@ngrx/store';
 import {registerReducer} from './store/register.reducer';
@@ -11,7 +18,9 @@ const Components = [
   UploadImageComponent,
   DetailFormComponent,
   SelectTableComponent,
-  SummaryComponent
+  SummaryComponent,
+  CardComponent,
+  DetailComponent
 ];
 
 @NgModule({
@@ -20,11 +29,12 @@ const Components = [
     ReactiveFormsModule,
     RegistrationRoutingModule,
     AngularMaterialRegistrationModule,
-    StoreModule.forRoot({ register: registerReducer })
+    StoreModule.forRoot({register: registerReducer})
   ],
   declarations: [
     ...Components,
     ...RoutedComponents
   ]
 })
-export class RegistrationModule {}
+export class RegistrationModule {
+}

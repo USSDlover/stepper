@@ -1,3 +1,44 @@
-<pre>
-  {{registration | json}}
-</pre>
+<ng-container *ngIf="registration?.image">
+  <app-card title="Uploaded Image">
+    <img [src]="registration?.image?.preview" [alt]="registration?.image?.file?.name">
+  </app-card>
+</ng-container>
+
+<ng-container *ngIf="registration?.userDetail">
+  <app-card title="Entered Detail">
+    <div class="details">
+      <app-detail
+        label="Amount"
+        [value]="registration?.userDetail?.amount?.toString()"
+      ></app-detail>
+      <app-detail
+        label="Date"
+        [value]="registration?.userDetail?.date | date"
+      ></app-detail>
+      <app-detail
+        label="Status"
+        [value]="registration?.userDetail?.status"
+      ></app-detail>
+      <app-detail
+        label="Source of Fund"
+        [value]="registration?.userDetail?.sourceOfFund"
+      ></app-detail>
+    </div>
+  </app-card>
+</ng-container>
+
+<ng-container *ngIf="registration?.agent">
+  <app-card title="Entered Detail">
+    <div class="details">
+      <app-detail
+        label="Full Name"
+        [value]="registration?.agent?.fullName()"
+      ></app-detail>
+      <app-detail
+        label="Years of Experience"
+        [value]="registration?.agent?.yearsOfExperience?.toString()"
+      ></app-detail>
+    </div>
+  </app-card>
+</ng-container>
+
