@@ -10,9 +10,9 @@ export const registerReducer = createReducer(
     return {...state, uploadedImage: data.uploadedImage};
   }),
   on(addDetail, (state, data) => {
-    return {...state, userDetail: UserDetail.create(data)};
+    return {...state, userDetail: UserDetail.fromJson(data)};
   }),
   on(selectAgent, (state, data) => {
-    return {...state, agent: Agent.create(data)};
+    return {...state, agent: Agent.fromJson(data)};
   })
 );

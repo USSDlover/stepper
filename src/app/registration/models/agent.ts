@@ -9,7 +9,7 @@ export class Agent implements Partial<IAgent> {
   constructor() {}
 
   fullName(): string {
-    return this.firstName?.toLocaleUpperCase() + ' ' + this.lastName?.toLocaleUpperCase();
+    return this.firstName + ' ' + this.lastName;
   }
 
   static create(data: IAgent): IAgent {
@@ -19,10 +19,19 @@ export class Agent implements Partial<IAgent> {
 
   static dummy(): IAgent {
     return Agent.create({
-      firstName: 'Dum-' + (Math.random() * 100000),
-      lastName: 'my-' + (Math.random() * 100000),
-      yearsOfExperience: Math.random() * 100,
-      id: Math.random() * 1000000,
+      firstName: 'Dum-' + (Math.floor(Math.random() * 100)),
+      lastName: 'my-' + (Math.floor(Math.random() * 100)),
+      yearsOfExperience: Math.floor(Math.random() * 10),
+      id: Math.floor(Math.random() * 1000000),
     });
+  }
+
+  static fromJson(data: IAgent): IAgent {
+    return Agent.create({
+      id: data.id,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      yearsOfExperience: data.yearsOfExperience
+    })
   }
 }

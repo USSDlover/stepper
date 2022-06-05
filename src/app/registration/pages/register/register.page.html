@@ -35,10 +35,12 @@
   <mat-step>
     <ng-template matStepLabel>Select Agent</ng-template>
     <div class="step-content-wrapper">
-      <app-select-table></app-select-table>
+      <app-select-table (agentSelected)="onSelectAgent($event); moveToSummary.click()"></app-select-table>
       <div class="step-action">
         <button mat-flat-button color="accent" matStepperPrevious>Back</button>
-        <button mat-flat-button color="primary" matStepperNext>Next</button>
+        <button mat-flat-button color="primary" matStepperNext>
+          <span #moveToSummary>Next</span>
+        </button>
       </div>
     </div>
   </mat-step>
