@@ -1,6 +1,6 @@
 <ng-container *ngIf="registration?.image">
   <app-card title="Uploaded Image">
-    <img [src]="registration?.image?.preview" [alt]="registration?.image?.file?.name">
+    <img [src]="safeImage(registration?.image?.preview!)" [alt]="registration?.image?.file?.name">
   </app-card>
 </ng-container>
 

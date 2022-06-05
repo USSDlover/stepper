@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IRegistration} from '../../interfaces';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-summary',
@@ -9,9 +10,13 @@ import {IRegistration} from '../../interfaces';
 export class SummaryComponent implements OnInit {
   @Input() registration: IRegistration | undefined;
 
-  constructor() { }
+  constructor(private domSanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
+  }
+
+  safeImage(url: string): string {
+    return <string>this.domSanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
 }
