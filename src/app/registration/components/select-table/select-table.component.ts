@@ -17,7 +17,6 @@ export class SelectTableComponent implements OnInit {
   }
 
   onAgentSelect(selectedAgent: IAgent): void {
-    console.log(selectedAgent);
     this.agentSelected.emit(selectedAgent);
   }
 
