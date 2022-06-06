@@ -20,15 +20,15 @@ export class RegisterPage implements OnInit {
   }
 
   onUploadImage(uploadedImage: File): void {
-    this.store.dispatch(addImage({uploadedImage}));
+    this.store.dispatch(addImage({ uploadedImage }));
   }
 
   onSubmitDetailForm(submittedForm: IUserDetail): void {
-    this.store.dispatch(addDetail(submittedForm));
+    this.store.dispatch(addDetail({ userDetail: submittedForm }));
   }
 
   onSelectAgent(selectedAgent: IAgent): void {
-    this.store.dispatch(selectAgent(selectedAgent));
+    this.store.dispatch(selectAgent({ agent: selectedAgent }));
   }
 
 }

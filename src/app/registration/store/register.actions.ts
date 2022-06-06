@@ -8,10 +8,10 @@ export const addImage = createAction(
 
 export const addDetail = createAction(
   '[Register Page] Add Detail',
-  props<IUserDetail>()
+  props<{ userDetail: IUserDetail }>()
 );
 
 export const selectAgent = createAction(
   '[Register Page] Select Agent',
-  props<IAgent>()
+  props<{ agent: IAgent }>()
 );
